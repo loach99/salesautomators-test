@@ -15,6 +15,7 @@
     "follow-redirects": "^1.15.6",
     "passport": "^0.7.0",
     "passport-oauth": "^1.0.0",
+    "passport-oauth2": "^1.8.0",
     "pipedrive": "^22.7.0",
     "request": "^2.88.2",
     "request-promise": "^4.2.6"

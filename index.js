@@ -1,5 +1,6 @@
 const API = '9d1c35db4f1a8bd32f12fd15085ded2aa131e634';
 const express = require('express');
+const passport = require('passport');
 
 const api = require('./api');
 const config = require('./config');
@@ -10,42 +11,35 @@ const axios = require('axios');
 const app = express();
 const port = 3000;
 
-app.get('/getData', async (req, res)=>{
-    try {
-        const response = await axios.get('https://oauth.pipedrive.com/oauth/authorize',{
-            params:{
-                client_id: '6e1054f640335df4',
-                redirect_uri: 'https://main--pipedriveloach99.netlify.app/'
-            }
-        })
-        res.send(response.data)
-        console.log(response.data)
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('An error occurred');
-    }
-})
+// app.get('/getData', async (req, res)=>{
+//     try {
+//         const response = await axios.get('https://oauth.pipedrive.com/oauth/authorize',{
+//             params:{
+//                 client_id: '6e1054f640335df4',
+//                 redirect_uri: 'https://main--pipedriveloach99.netlify.app/'
+//             }
+//         })
+//         res.send(response.data)
+//         console.log(response.data)
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('An error occurred');
+//     }
+// })
 
-// passport.use(
-// 	'pipedrive',
-// 	new OAuth2Strategy({
-// 			authorizationURL: 'https://oauth.pipedrive.com/oauth/authorize',
-// 			tokenURL: 'https://oauth.pipedrive.com/oauth/token',
-// 			clientID: config.clientID || '',
-// 			clientSecret: config.clientSecret || '',
-// 			callbackURL: config.callbackURL || ''
-// 		}, async (accessToken, refreshToken, profile, done) => {
-// 			const userInfo = await api.getUser(accessToken);
-// 			const user = await User.add(
-// 				userInfo.data.name,
-// 				accessToken,
-// 				refreshToken
-// 			);
-
-// 			done(null, { user });
-// 		}
-// 	)
-// );
+passport.use(
+	'pipedrive',
+	new OAuth2Strategy({
+			authorizationURL: 'https://oauth.pipedrive.com/oauth/authorize',
+			tokenURL: 'https://oauth.pipedrive.com/oauth/token',
+			clientID: '6e1054f640335df4',
+			clientSecret: '443d1e3f8f4644d873596cd087ed317c4df486a3',
+			callbackURL: 'https://main--pipedriveloach99.netlify.app/'
+		}, async(accessToken, refreshToken, profile, done)=>{
+            console.log(accessToken, refreshToken, profile, done)
+        }
+	)
+);
 
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'hbs');
