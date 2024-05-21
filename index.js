@@ -20,7 +20,8 @@ app.get('/getData', async (req, res)=>{
             }
         })
         res.send(response.data)
-        console.log(response.data)
+        console.log(response)
+        console.log(response.params)
     } catch (error) {
         console.error(error);
     }
