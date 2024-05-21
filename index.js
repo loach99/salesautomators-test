@@ -34,7 +34,7 @@ passport.use(
 			tokenURL: 'https://oauth.pipedrive.com/oauth/token',
 			clientID: '6e1054f640335df4',
 			clientSecret: '443d1e3f8f4644d873596cd087ed317c4df486a3',
-			callbackURL: 'https://main--pipedriveloach99.netlify.app/'
+			callbackURL: 'http://92.53.70.19:3000/'
 		}, async(accessToken, refreshToken, profile, done)=>{
             console.log(accessToken, refreshToken, profile, done)
         }
