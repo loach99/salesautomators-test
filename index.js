@@ -11,7 +11,7 @@ const axios = require('axios');
 const app = express();
 const port = 3000;
 
-app.get('/getData', async (req, res)=>{
+app.get('/oauth/callback', async (req, res)=>{
     try {
         const response = await axios.get('https://oauth.pipedrive.com/oauth/authorize?client_id=6e1054f640335df4&redirect_uri=http://92.53.70.19:3000/oauth/callback')
         res.send(response.data)
