@@ -16,7 +16,7 @@ app.get('/getData', async (req, res)=>{
         const response = await axios.get('https://oauth.pipedrive.com/oauth/authorize',{
             params:{
                 client_id: '6e1054f640335df4',
-                redirect_uri: '92.53.70.19:3000/oauth/callback'
+                redirect_uri: 'https://92.53.70.19:3000/oauth/callback'
             }
         })
         res.send(response.data)
