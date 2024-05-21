@@ -1,7 +1,7 @@
 const API = '9d1c35db4f1a8bd32f12fd15085ded2aa131e634';
 const express = require('express');
 const passport = require('passport');
-
+const OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 const api = require('./api');
 const config = require('./config');
 const axios = require('axios');
