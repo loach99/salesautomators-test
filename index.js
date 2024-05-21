@@ -13,12 +13,7 @@ const port = 3000;
 
 app.get('/getData', async (req, res)=>{
     try {
-        const response = await axios.get('https://oauth.pipedrive.com/oauth/authorize',{
-            params:{
-                client_id: '6e1054f640335df4',
-                redirect_uri: 'https://92.53.70.19:3000/oauth/callback'
-            }
-        })
+        const response = await axios.get('https://oauth.pipedrive.com/oauth/authorize?client_id=6e1054f640335df4&redirect_uri=http://127.0.0.1:3000/oauth/callback')
         res.send(response.data)
         console.log(response.params)
     } catch (error) {
