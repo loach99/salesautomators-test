@@ -19,6 +19,7 @@ app.get('/getData', async (req, res)=>{
             }
         })
         res.send(response.data)
+        console.log(response.data)
     } catch (error) {
         console.error(error);
         res.status(500).send('An error occurred');
