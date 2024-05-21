@@ -15,7 +15,7 @@ app.get('/getData', async (req, res)=>{
         const response = await axios.get('https://oauth.pipedrive.com/oauth/authorize',{
             params:{
                 client_id: '6e1054f640335df4',
-                redirect_uri: 'http://92.53.70.19:3000/'
+                redirect_uri: 'https://main--pipedriveloach99.netlify.app/'
             }
         })
         res.send(response.data)
